@@ -1,0 +1,186 @@
+/* @import url('https://fonts.googleapis.com/css2?family=Krona+One&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat&display=swap'); */
+@import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
+
+:root {
+    --cor-primaria: #000000;
+    --cor-secundaria: #F6F6F6;
+    --cor-cabecalho: #20c5eb;
+    --cor-terciaria: #22D4FD;
+    --cor-botao-hover: #272727;
+    --cor-rodape: #012640;
+
+    --fonte-primaria: 'Montserrat', sans-serif;
+    --fonte-secundaria: 'Krona One', sans-serif;
+}
+
+* {
+    /* box model - reset dos elementos abaixo */
+    margin: 0;
+    padding: 0;
+}
+
+body {
+    /* height -> não precisa mais indicar para pegar a tela toda, elementos existentes ultrapassaram altura da tela */
+    /* altura do elemento body da tela = 100% do viewport. */
+    /* height: 100vh; */
+    /* encolhe o conteúdo dentro da página levando em consideração o tamanho do border e padding */
+    box-sizing: border-box;
+    background-color: var(--cor-primaria);
+    color: var(--cor-secundaria);
+}
+
+.cabecalho {
+    padding: 1% 0 0 8%;
+}
+
+.cabecalho__menu {
+    display: flex;
+    gap: 4%;
+}
+
+.cabecalho__menu__link {
+    font-family: var(--fonte-primaria);
+    font-size: 1.13rem;
+    font-weight: 600;
+    color: var(--cor-cabecalho);
+    text-decoration: none;
+}
+
+.cabecalho__menu__link:hover {
+    color: var(--cor-secundaria);
+}
+
+.apresentacao {
+    padding: 1% 8%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 0.1%;
+}
+
+.apresentacao__conteudo {
+    width: 54%;
+    display: flex;
+    flex-direction: column;
+    /* no figma aponte para o objeto e digite a tecla alt para ter a altura do espaçamento entre os filhos */
+    gap: 1.125rem;
+}
+
+.apresentacao__conteudo__titulo {
+    font-size: 2rem;
+    font-family: var(--fonte-secundaria);
+    text-align: justify;
+}
+
+.apresentacao__conteudo__titulo-destaque {
+    color: var(--cor-terciaria);
+}
+
+.apresentacao__conteudo__paragrafo {
+    font-size: 1.5rem;
+    font-family: var(--fonte-primaria);
+    text-align: justify;
+}
+
+.apresentacao__conteudo__links {
+    display: flex;
+    justify-content: space-between;
+    flex-direction: column;
+    align-items: center;
+    gap: 1.125rem;
+}
+
+.apresentacao__conteudo__subtitulo {
+    font-family: var(--fonte-secundaria);
+    font-weight: 400;
+    font-size: 1.25rem;
+}
+
+.apresentacao__conteudo__links__navegacao {
+    display: flex;
+    justify-content: center;
+    gap: 1rem;
+    /* quando o fundo for preto não precisa colocar */
+    /* background-color: var(--cor-primaria);   */
+    border: 0.125rem solid var(--cor-terciaria);
+    border-radius: 0.5rem;
+    width: 45%;
+    /* no figma aponte para o objeto e digite a tecla alt para ter a altura do padding */
+    padding: 1% 0;
+    /* retira o risco (linha) do hiperlink ancora que vem como padrão */
+    text-decoration: none;
+    text-align: center;
+    color: var(--cor-secundaria);
+    font-size: 1.3rem;
+    font-family: var(--fonte-primaria);
+    font-weight: 600;
+}
+
+.apresentacao__conteudo__links__navegacao:hover {
+    background-color: var(--cor-botao-hover);
+    padding: 1%;
+}
+
+.apresentacao__imagem {
+    width: 44%;
+    padding: 0;
+}
+
+.rodape {
+    background-color: var(--cor-rodape);
+    color: var(--cor-secundaria);
+    padding: 0.7%;
+    /* As 2 linhas abaixo não são necessarias, substituidas por "text-align: center", pois o conteudo é um texto
+    display: flex;
+    justify-content: center; */
+    text-align: center;
+    font-family: var(--fonte-primaria);
+    font-size: 1rem;
+    font-weight: 400;
+}
+
+@media (max-width: 1000px) {
+
+    .cabecalho {
+        padding: 5% 0 0 5%;
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .apresentacao {
+        /* para mudar a localizacao da imagem no final para o inicio */
+        flex-direction: column-reverse;
+        padding: 5%;
+    }
+
+    .apresentacao__conteudo {
+        width: auto;
+    }
+
+    .apresentacao__conteudo__titulo {
+        font-size: 1.8rem;
+        text-align: left;
+    }
+
+    .apresentacao__conteudo__paragrafo {
+        text-align: left;
+    }
+
+    .apresentacao__conteudo__links__navegacao {
+        width: 80%;
+    }
+
+    .apresentacao__imagem {
+        width: auto;
+        /* A imagem não excederá a largura do contêiner pai */
+        max-width: 90%;
+        /* A imagem não excederá a altura do contêiner pai */
+        max-height: 90%;
+        /* A altura será ajustada automaticamente para manter a proporção original */
+        height: auto;
+        padding: 5%;
+    }
+}
