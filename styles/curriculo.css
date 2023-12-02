@@ -1,11 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=Krona+One&family=Montserrat:wght@400;600&display=swap');
 
 :root {
+    --cor-fundo-cabecalho: #013357;
+    --cor-cabecalho: #20c5eb;
     --cor-primaria: #000000;
     --cor-secundaria: #F6F6F6;
-    --cor-cabecalho: #20c5eb;
     --cor-terciaria: #22D4FD;
-    --cor-rodape: #012640;
+    --cor-fundo-rodape: #012640;
 
     --fonte-primaria: 'Montserrat', sans-serif;
     --fonte-secundaria: 'Krona One', sans-serif;
@@ -99,7 +100,7 @@ body {
 }
 
 .rodape {
-    background-color: var(--cor-rodape);
+    background-color: var(--cor-fundo-rodape);
     color: var(--cor-secundaria);
     padding: 0.7%;
     /* As 2 linhas abaixo não são necessarias, substituidas por "text-align: center", pois o conteudo é um texto
@@ -109,4 +110,20 @@ body {
     font-family: var(--fonte-primaria);
     font-size: 1rem;
     font-weight: 400;
+}
+
+@media (max-width: 1000px) {
+
+    .cabecalho {
+        padding: 5% 0 5% 5%;
+        background-color: var(--cor-fundo-cabecalho);
+    }
+
+    .cabecalho__menu {
+        justify-content: center;
+    }
+
+    .cabecalho__menu__link {
+        color: var(--cor-secundaria);
+    }
 }
